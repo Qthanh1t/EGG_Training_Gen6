@@ -14,12 +14,14 @@ public class Rectangle {
         return;
     }
     public float dienTich(){
-        System.out.println("dien tich hinh chu nhat la: " + chieuDai*chieuRong);
-        return chieuDai*chieuRong;
+        float dt=chieuDai*chieuRong;
+        System.out.println("dien tich hinh chu nhat la: " + dt);
+        return dt;
     }
     public float chuVi(){
-        System.out.println("chu vi hinh chu nhat la: " + 2*(chieuDai+chieuRong));
-        return 2*(chieuDai+chieuRong);
+        float cv=2*(chieuDai+chieuRong);
+        System.out.println("chu vi hinh chu nhat la: " + cv);
+        return cv;
     }
     public static void main(String [] args){
         Scanner input = new Scanner(System.in);

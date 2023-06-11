@@ -28,8 +28,12 @@ public class Rectangle {
         System.out.print("nhap ten hinh chu nhat: ");
         String ten1 = input.nextLine();
         Rectangle hinh1 = new Rectangle(ten1);
-        System.out.print("nhap chieu dai va chieu rong chu nhat: ");
-        float cd=input.nextFloat(),cr=input.nextFloat();
+        float cd,cr;
+        do{
+            System.out.print("nhap chieu dai va chieu rong chu nhat: ");
+            cd=input.nextFloat();
+            cr=input.nextFloat();
+        }while(cd<=0 || cr<=0);
         input.close();
         hinh1.infor(cd, cr);
         hinh1.ten();

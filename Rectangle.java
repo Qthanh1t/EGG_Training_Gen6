@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Rectangle {
-    int chieuDai, chieuRong;
+    float chieuDai, chieuRong;
     String ten;
     public Rectangle(String t){
         ten = t;
@@ -8,16 +8,16 @@ public class Rectangle {
     public void ten() {
         System.out.println("ten hinh chu nhat la: "+ ten);
     }
-    public void infor(int cd, int cr){
+    public void infor(float cd, float cr){
         chieuDai=cd;
         chieuRong=cr;
         return;
     }
-    public int dienTich(){
+    public float dienTich(){
         System.out.println("dien tich hinh chu nhat la: " + chieuDai*chieuRong);
         return chieuDai*chieuRong;
     }
-    public int chuVi(){
+    public float chuVi(){
         System.out.println("chu vi hinh chu nhat la: " + 2*(chieuDai+chieuRong));
         return 2*(chieuDai+chieuRong);
     }
@@ -27,7 +27,7 @@ public class Rectangle {
         String ten1 = input.nextLine();
         Rectangle hinh1 = new Rectangle(ten1);
         System.out.print("nhap chieu dai va chieu rong chu nhat: ");
-        int cd=input.nextInt(),cr=input.nextInt();
+        float cd=input.nextFloat(),cr=input.nextFloat();
         input.close();
         hinh1.infor(cd, cr);
         hinh1.ten();

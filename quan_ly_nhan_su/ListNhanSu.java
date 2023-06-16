@@ -40,18 +40,21 @@ public class ListNhanSu {
                 for(NhanSu n:list){
                     n.dsns();
                 }
+                System.out.println("");
             }
             else if(choice==4){
                 System.out.println("ID - Ten - Chuc vu - Luong");
                 for(NhanSu n:list){
                     n.dsl();
                 }
+                System.out.println("");
             }
             else if(choice==5){
                 System.out.println("ID - Ten - Chuc vu");
                 for(NhanSu n:list){
                     n.dsr();
                 }
+                System.out.println("");
             }
         }while(choice==1 || choice==2 || choice==3 || choice==4 || choice==5);
     }

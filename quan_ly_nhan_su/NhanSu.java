@@ -40,17 +40,17 @@ public class NhanSu {
         System.out.print(id+" - ");
         System.out.print(name+" - ");
         System.out.print(age+" - ");
-        System.out.println(role+"\n");
+        System.out.println(role);
     }
     public void dsl(){
         System.out.print(id+" - ");
         System.out.print(name+" - ");
         System.out.print(role+" - ");
-        System.out.println(salary+"\n");        
+        System.out.println(salary);        
     }
     public void dsr(){
         System.out.print(id+" - ");
         System.out.print(name+" - ");
-        System.out.println(role+"\n");
+        System.out.println(role);
     }
 }

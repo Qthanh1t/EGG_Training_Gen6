@@ -15,7 +15,7 @@ public class ListNhanSu {
                 NhanSu n = new NhanSu();
                 n.input();
                 list.add(n);
-                System.out.println("Da them nhan su "+ n.id +"\n");
+                System.out.println("Da them nhan su "+ n.getId() +"\n");
             }
             else if(choice==2){
                 System.out.print("Nhap ID nhan su can xoa: ");
@@ -24,7 +24,7 @@ public class ListNhanSu {
                 int i=0;
                 for(;i<list.size();i++){
                     NhanSu n=list.get(i);
-                    if(n.id==ID){
+                    if(n.getId()==ID){
                         list.remove(i);
                         System.out.println("Da xoa nhan su "+ ID +"\n");
                         i=-1;

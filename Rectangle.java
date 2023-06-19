@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Rectangle {
-    float chieuDai, chieuRong;
-    String ten;
+    private float chieuDai, chieuRong;
+    private String ten;
     public Rectangle(String t){
         ten = t;
     }

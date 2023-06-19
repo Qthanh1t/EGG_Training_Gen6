@@ -30,9 +30,16 @@ public class Triangle extends Shape{
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ten hinh tam giac: ");
         String name = sc.nextLine();
+        double canh_1, canh_2, canh_3;
         Triangle tam_giac_1 = new Triangle(name);
         System.out.print("Nhap 3 canh cua tam giac: ");
-        double canh_1=sc.nextDouble(), canh_2=sc.nextDouble(), canh_3=sc.nextDouble();
+        do{
+            canh_1=sc.nextDouble(); canh_2=sc.nextDouble(); canh_3=sc.nextDouble();
+            if(canh_1<=0 || canh_2<=0 || canh_3<=0 || canh_1+canh_2<=canh_3 || canh_1+canh_3<=canh_2 || canh_3+canh_2<=canh_1){
+                System.out.println("Khong phai hinh tam giac!");
+                System.out.print("Nhap lai 3 canh cua tam giac: ");
+            }
+        }while(canh_1<=0 || canh_2<=0 || canh_3<=0 || canh_1+canh_2<=canh_3 || canh_1+canh_3<=canh_2 || canh_3+canh_2<=canh_1);
         tam_giac_1.setCanh(canh_1, canh_2, canh_3);
         tam_giac_1.printName();
         tam_giac_1.chuVi();

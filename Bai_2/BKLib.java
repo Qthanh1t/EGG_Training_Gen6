@@ -67,9 +67,4 @@ public abstract class BKLib {
     }
 
     public abstract double thanhTien();
-    public static void main(String [] args){
-        BKLib sach = new sgk();
-        sach.setNgayNhap(1, 1, 2000);
-        System.out.println(sach.getNgayNhap().ngay+"/"+sach.getNgayNhap().thang+"/"+sach.getNgayNhap().nam);
-    }
 }

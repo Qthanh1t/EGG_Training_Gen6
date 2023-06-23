@@ -65,6 +65,11 @@ public abstract class BKLib {
     public int getSoLuong() {
         return soLuong;
     }
-
+    public void output(){
+        System.out.print(getMaSach()+" - ");
+        System.out.print(getTieuDe()+" - ");
+        System.out.print(getNgayNhap().ngay+"/"+getNgayNhap().thang+"/"+getNgayNhap().nam+" - ");
+        System.out.println(getNxb());
+    }
     public abstract double thanhTien();
 }

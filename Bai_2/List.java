@@ -6,6 +6,7 @@ public class List {
         ArrayList<sgk> listSgk = new ArrayList<>();
         ArrayList<stk> listStk = new ArrayList<>();
         ArrayList<snv> listSnv = new ArrayList<>();
+        ArrayList<BKLib> listBook = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int choice;
         do{
@@ -13,6 +14,7 @@ public class List {
             System.out.println("1. Them sach");
             System.out.println("2. Xem danh sach cac loai sach");
             System.out.println("3. Tong thanh tien");
+            System.out.println("4. Tim sach giao khoa cua NXB");
             System.out.println("Nhap 0 de thoat chuong trinh");
             choice=sc.nextInt();
             sc.nextLine();
@@ -25,17 +27,20 @@ public class List {
                     if(loai.equalsIgnoreCase("sgk")){
                         sgk Sgk = new sgk();
                         Sgk.input();
-                        listSgk.add(Sgk);   
+                        listSgk.add(Sgk); 
+                        listBook.add(Sgk);  
                     }
                     else if(loai.equalsIgnoreCase("stk")){
                         stk Stk = new stk();
                         Stk.input();
                         listStk.add(Stk);
+                        listBook.add(Stk);  
                     }
                     else if(loai.equalsIgnoreCase("snv")){
                         snv Snv = new snv();
                         Snv.input();
                         listSnv.add(Snv);
+                        listBook.add(Snv);  
                     }
                     else {
                         System.out.print("Nhap sai loai sach!!\nNhap lai loai sach muon them (sgk/stk/snv): ");
@@ -107,7 +112,17 @@ public class List {
                     }
                 }while(k==0);
             }
-        }while(choice==1||choice==2||choice==3);
+            else if(choice==4){
+                System.out.print("Nhap NXB can tim: ");
+                String NXB=sc.nextLine();
+                for(BKLib n:listBook){
+                    if(n.getNxb().equalsIgnoreCase(NXB)){
+                        n.output();
+                    }
+                }
+                System.out.println("");
+            }
+        }while(choice==1||choice==2||choice==3||choice==4);
     }
 
 }

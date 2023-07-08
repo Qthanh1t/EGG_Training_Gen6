@@ -7,6 +7,7 @@ public class ListSV {
         Scanner sc = new Scanner(System.in);
         int choice;
         do{
+            System.out.println("Nhap so thu tu tuong ung voi lua chon.");
             System.out.println("1. Them sinh vien.");
             System.out.println("2. Hien thi danh sach SV.");
             System.out.println("3. Cap nhat thong tin SV.");

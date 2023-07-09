@@ -1,9 +1,7 @@
 package quan_ly_sv;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class ListSV {
     public static void main(String[] args){
-        ArrayList<Student> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int choice;
         do{
@@ -18,54 +16,30 @@ public class ListSV {
             if(choice==1){
                 Student s = new Student();
                 s.input();
-                list.add(s);
-                System.out.println("Da them sinh vien "+s.getId()+"\n");
+                jdbc a = new jdbc();
+                a.Insert(s.getId(), s.getName(), s.getAge(), s.getMajor());
             }
             else if(choice==2){
                 System.out.println("MSSV - ten - tuoi - chuyen nganh");
-                for(Student s:list){
-                    s.output();
-                }
+                jdbc a = new jdbc();
+                a.Print();
                 System.out.println("\n");
             }
             else if(choice==3){
                 System.out.print("Nhap MSSV cua sinh vien muon cap nhat: ");
-                int ID=sc.nextInt();
+                int p_id=sc.nextInt();
                 sc.nextLine();
-                int i=0;
-                boolean a=false;
-                for(;i<list.size();i++){
-                    Student s=list.get(i);
-                    if(s.getId()==ID){
-                        a=true;
-                        break;
-                    }
-                }
-                if(a){
-                    System.out.println("Cap nhat thong tin");
-                    Student s=list.get(i);
-                    s.input();
-                    System.out.println("Da cap nhat thong tin sinh vien "+s.getId()+"\n");
-                }
-                else{
-                    System.out.println("Khong tim thay sinh vien "+ID+"\n");
-                }
+                Student s=new Student();
+                s.input();
+                jdbc a=new jdbc();
+                a.Update(p_id, s.getId(), s.getName(), s.getAge(), s.getMajor());
             }
             else if(choice==4){
                 System.out.print("Nhap MSSV cua sinh vien muon xoa: ");
                 int ID=sc.nextInt();
                 sc.nextLine();
-                int i=0;
-                for(;i<list.size();i++){
-                    Student s=list.get(i);
-                    if(s.getId()==ID){
-                        list.remove(i);
-                        i=-1;
-                        System.out.println("Da xoa sinh vien "+ID+"\n");
-                        break;
-                    }
-                }
-                if(i>=0) System.out.println("Khong tim thay sinh vien "+ID+"\n");
+                jdbc a = new jdbc();
+                a.Delete(ID);
             }
         }while(choice==1||choice==2||choice==3||choice==4);
     }

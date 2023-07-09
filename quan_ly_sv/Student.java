@@ -40,12 +40,5 @@ public class Student {
         sc.nextLine();
         System.out.print("Nhap chuyen nganh SV: ");
         setMajor(sc.nextLine());        
-    }
-    public void output(){
-        System.out.print(getId()+" - ");
-        System.out.print(getName()+" - ");
-        System.out.print(getAge()+" - ");
-        System.out.println(getMajor());
-    }
-    
+    }    
 }

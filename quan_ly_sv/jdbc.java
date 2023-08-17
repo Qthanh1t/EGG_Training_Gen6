@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class jdbc {
     private static String DB_URL = "jdbc:mysql://localhost:3306/student_management";
     private static String USER_NAME = "root";
-    private static String PASSWORD = "onepiecels1";
+    private static String PASSWORD = "thanh1234";
     public static Connection getConnection(String dbURL, String userName, 
             String password) {
         Connection conn = null;

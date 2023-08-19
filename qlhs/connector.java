@@ -77,4 +77,52 @@ public class connector {
             System.out.println("In thong tin KHONG thanh cong!!!"+"\n");
         }
     }
+    public void updateScore(int ID, float diem){
+        try {
+            Connection conn = getConnection(DB_URL, USER_NAME, PASSWORD);
+            Statement stmt = conn.createStatement();  
+            stmt.executeUpdate("UPDATE `week_5-egg`.`students` SET `AverageScore`='"+diem+"' WHERE (`StudentID` = '"+ID+"');");
+            System.out.println("Cap nhat diem sinh vien thanh cong!!\n");
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Cap nhat thong tin sinh vien KHONG thanh cong!!\n");
+        }    
+    }
+    public void deleteStudent(int ID){
+        try {
+            Connection conn = getConnection(DB_URL, USER_NAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("DELETE FROM `week_5-egg`.`students` WHERE (`StudentID` = '"+ID+"');");
+            System.out.println("Xoa thong tin sinh vien thanh cong!!\n");
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Xoa thong tin sinh vien KHONG thanh cong!!\n");
+        }
+    }
+    public void maxEachClass(){
+        try {
+            Connection conn = getConnection(DB_URL, USER_NAME, PASSWORD);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("select a.ClassName, students.StudentID, students.StudentName, students.AverageScore\n" + //
+                    "from `week_5-egg`.`students`,(select classes.ClassID, classes.ClassName, MAX(students.AverageScore) as diem\n" + //
+                    "from `week_5-egg`.`students`\n" + //
+                    "join `week_5-egg`.`classes`\n" + //
+                    "on students.ClassID=classes.ClassID\n" + //
+                    "group by students.ClassID) a\n" + //
+                    "where students.ClassID=a.ClassID and students.AverageScore=a.diem;\n" + //
+                    "");
+            System.out.println("Lop - MSSV - Ten - Diem");
+            while(rs.next()){
+                System.out.println(rs.getString(1) + " - " + rs.getInt(2) 
+                        + " - " + rs.getString(3) + " - " + rs.getFloat(4));
+            }
+            System.out.println("In thong tin thanh cong!!!"+"\n");         
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("In thong tin KHONG thanh cong!!!"+"\n");
+        }
+    }
 }

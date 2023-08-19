@@ -30,6 +30,26 @@ public class run_me {
                 connector a = new connector();
                 a.StudentsScore();
             }
+            else if(choice==4){
+                connector a = new connector();
+                System.out.print("Nhap MSSV cua sinh vien can nhat: ");
+                int ID=sc.nextInt();
+                System.out.print("Nhap diem: ");
+                float diem = sc.nextFloat();
+                sc.nextLine();
+                a.updateScore(ID, diem);
+            }
+            else if(choice==5){
+                connector a = new connector();
+                System.out.print("Nhap MSSV cua sinh vien can xoa: ");
+                int ID=sc.nextInt();
+                sc.nextLine();
+                a.deleteStudent(ID);
+            }
+            else if(choice==6){
+                connector a = new connector();
+                a.maxEachClass();
+            }
         }while(choice==1||choice==2||choice==3||choice==4||choice==5||choice==6);
     }
 }
